@@ -1,8 +1,6 @@
 package dev.kush.springaivertex.config;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;
-import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.PgVectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +10,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Configuration
 public class ChatClientConfig {
@@ -40,7 +36,9 @@ public class ChatClientConfig {
 }
 
 @Table
-record Contact(@Id int id, String name, String phoneNumber, String interests) {}
+record Contact(@Id int id, String name, String phoneNumber, String interests) {
+}
 
 @Repository
-interface ContactRepository extends CrudRepository<Contact, Integer> {}
+interface ContactRepository extends CrudRepository<Contact, Integer> {
+}

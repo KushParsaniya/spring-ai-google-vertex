@@ -31,8 +31,8 @@ public class MovieController {
                 .system(movieRecPrompt)
                 .user(String.format(
                         """
-                            suggest me some movie i like watching movie of %s genre.
-                        """, preference
+                                    suggest me some movie i like watching movie of %s genre.
+                                """, preference
                 )).call()
                 .entity(new ParameterizedTypeReference<>() {
                 });
@@ -47,15 +47,20 @@ public class MovieController {
                         here is my id %d, suggest me some movies
                         """.formatted(id))
                 .call()
-                .entity(new ParameterizedTypeReference<>() {});
+                .entity(new ParameterizedTypeReference<>() {
+                });
     }
 
 }
 
-record RecommendedMoviesList(List<RecommendedMovie> movies) {}
+record RecommendedMoviesList(List<RecommendedMovie> movies) {
+}
 
-record RecommendedMovie(String title, String overview, float imdb, int releaseYear, List<Actor> actors) {}
+record RecommendedMovie(String title, String overview, float imdb, int releaseYear, List<Actor> actors) {
+}
 
-record Actor(String name, int age, List<Award> awards) {}
+record Actor(String name, int age, List<Award> awards) {
+}
 
-record Award(String awardName, String movieName) {}
+record Award(String awardName, String movieName) {
+}

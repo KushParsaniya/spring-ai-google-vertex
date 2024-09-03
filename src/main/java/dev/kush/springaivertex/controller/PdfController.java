@@ -31,7 +31,7 @@ public class PdfController {
         return chatClient
                 .prompt()
                 .advisors(new QuestionAnswerAdvisor(pgVectorStore))
-                .system(resource)
+//                .system(resource)
                 .user(prompt)
                 .call().content();
     }
