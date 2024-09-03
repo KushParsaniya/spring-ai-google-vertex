@@ -18,6 +18,9 @@
         <license/>
     </licenses>
     <developers>
+        <developer>
+            <name>Kush Parsaniya</name>
+        </developer>
         <developer/>
     </developers>
     <scm>
